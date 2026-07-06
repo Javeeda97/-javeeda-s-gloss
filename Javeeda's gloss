@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javeeda's Gloss</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f0f0f;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 25px;
+      background: black;
+    }
+
+    .status {
+      background: #1a1a1a;
+      padding: 10px;
+      text-align: center;
+      color: pink;
+      font-weight: bold;
+    }
+
+    .chat {
+      margin: 20px;
+      padding: 15px;
+      background: #1a1a1a;
+      border-radius: 10px;
+    }
+
+    #box {
+      height: 150px;
+      overflow-y: auto;
+      background: black;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 70%;
+      padding: 10px;
+    }
+
+    button {
+      padding: 10px;
+      background: pink;
+      border: none;
+    }
+
+    .products {
+      padding: 20px;
+    }
+
+    .card {
+      background: #222;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    .vip {
+      color: gold;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Javeeda’s Gloss 💄</h1>
+  <p>Luxury Beauty Experience</p>
+</header>
+
+<div class="status">
+  Status: Glam Girl 💖 (New Customer)
+</div>
+
+<div class="chat">
+  <h3>AI Gloss Assistant</h3>
+
+  <div id="box">
+    <p>Hi babe 💕 Ask me about your perfect gloss shade.</p>
+  </div>
+
+  <input id="msg" placeholder="Type here...">
+  <button onclick="send()">Send</button>
+</div>
+
+<div class="products">
+  <h2>Collections</h2>
+
+  <div class="card">
+    <h3>Barbie Perfection 💖</h3>
+    <p>Soft pink luxury gloss set</p>
+    <p>₦5,000</p>
+  </div>
+
+  <div class="card">
+    <h3>Golden Aura ✨</h3>
+    <p>Luxury warm nude tones</p>
+    <p>₦5,000</p>
+  </div>
+
+  <div class="card vip">
+    <h3>Midnight Royal 🌙 (VIP)</h3>
+    <p>Exclusive dark glam shades</p>
+    <p>₦7,000</p>
+  </div>
+
+</div>
+
+<script>
+function send() {
+  let input = document.getElementById("msg");
+  let box = document.getElementById("box");
+
+  let text = input.value;
+  if (!text) return;
+
+  box.innerHTML += "<p><b>You:</b> " + text + "</p>";
+
+  let reply = "Try Barbie Perfection 💖 or Golden Aura ✨";
+
+  if (text.toLowerCase().includes("vip")) {
+    reply = "VIP unlocks Midnight Royal 🌙 — luxury exclusive gloss!";
+  }
+
+  if (text.toLowerCase().includes("barbie")) {
+    reply = "Barbie Perfection is soft pink glam made for you 💖";
+  }
+
+  box.innerHTML += "<p><b>AI:</b> " + reply + "</p>";
+
+  input.value = "";
+}
+</script>
+
+</body>
+</html>
